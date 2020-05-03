@@ -1,18 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment.prod';
+import {AsideBarComponent} from '@corePath/components/aside-bar/aside-bar.component';
+import {SVGComponent} from '@app/shared/components/Icons';
+import {HomeComponent} from '@corePath/components/home/home.component';
+
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        AsideBarComponent,
+        SVGComponent,
+        HomeComponent,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        // BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

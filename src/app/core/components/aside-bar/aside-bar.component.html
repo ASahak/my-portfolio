@@ -1,0 +1,70 @@
+<div class="aside-container">
+    <div class="logo-content">
+        <a  [routerLink]="'/'">
+            <app-svg-icon
+                [width]="40"
+                [height]="35"
+                stroke="#08FDD8"
+                [stroke-width]="1"
+                type="logo-mini"
+            ></app-svg-icon>
+            Arthur
+        </a>
+    </div>
+    <ul class="aside_center-content">
+        <li>
+            <a [routerLink]="'/'" routerLinkActive="active-router-link">
+                <i class="lnr lnr-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="'/programs'" routerLinkActive="active-router-link">
+                <i class="lnr lnr-keyboard"></i>
+                <span>Programs</span>
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="'/about'" routerLinkActive="active-router-link">
+                <i class="lnr lnr-user"></i>
+                <span>About</span>
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="'/works'" routerLinkActive="active-router-link">
+                <i class="lnr lnr-eye"></i>
+                <span>Works</span>
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="'/skills'" routerLinkActive="active-router-link">
+                <i class="lnr lnr-cog"></i>
+                <span>Skills</span>
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="'/contact'" routerLinkActive="active-router-link">
+                <i class="lnr lnr-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </li>
+    </ul>
+    <ul class="aside_bottom-content">
+        <li>
+            <a href="https://www.facebook.com/artur.sahakyan.3762" target="_blank">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/in/arthur-sahakyan-276abb158/" target="_blank">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/ASahak" target="_blank">
+                <i class="fa fa-github" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
