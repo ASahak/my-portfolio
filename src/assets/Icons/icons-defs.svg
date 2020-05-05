@@ -1,3 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg">
     <text id="logo-mini" font-family="Tangerine" x="0" y="25" fill="none" font-size="35">A</text>
+
+    <text id="logo-big-lg" font-family="Tangerine" x="-10" y="420" fill="none" font-size="500">A</text>
+    <text id="logo-big-md" font-family="Tangerine" x="-10" y="420" fill="none" font-size="500">A</text>
+    <text id="logo-big-sm" font-family="Tangerine" x="-10" y="420" fill="none" font-size="500">A</text>
 </svg>

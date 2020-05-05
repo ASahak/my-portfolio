@@ -1,0 +1,93 @@
+@import "mixins";
+.home-component {
+    flex: 1;
+}
+.html-and-logo-content {
+    height: 100vh;
+    display: flex;
+    .html_content {
+        padding: 30px;
+        box-sizing: border-box;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .italic-tag {
+            font-size: 20px;
+            color: #4d4d4e;
+            font-family: "Dancing Script";
+        }
+        .html-content_top {
+            > p:last-child {
+                margin-top: 15px;
+                padding-left: 40px;
+            }
+        }
+        .html-content_bottom {
+            > p:first-child {
+                margin-bottom: 15px;
+                padding-left: 40px;
+            }
+        }
+        .html-content_middle {
+            padding-left: 80px;
+            @include max-xs {
+                & {
+                    padding-left: 40px;
+                }
+            }
+            @include max-xs-s {
+                & {
+                    padding-left: 0px;
+                }
+            }
+            > p {
+                color: #4d4d4e;
+                letter-spacing: 5px;
+                font-family: "Catamaran";
+            }
+        }
+    }
+    .logo_content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        .logo-md {
+            display: none;
+        }
+        @include min-sm-max-md {
+            .logo-md {
+                display: block;
+            }
+        }
+        @include max-md {
+            .logo-lg {
+                display: none;
+            }
+        }
+        #logo-big-lg {
+            font-family: "Tangerine";
+            stroke-dasharray: 2500;
+            stroke-dashoffset: 2500;
+            animation: dash 4s linear forwards, filling 4s ease-in forwards;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes filling {
+            from{
+                fill: #08FDD8;
+                fill-opacity: 0;
+            }
+            to {
+                fill: #08FDD8;
+                fill-opacity: 1;
+            }
+        }
+    }
+}

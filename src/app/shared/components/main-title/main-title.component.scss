@@ -1,0 +1,23 @@
+h1 {
+    color: #fff;
+    font-size: 45px;
+    span.italic-tag:first-child {
+        display: block;
+    }
+    span.italic-tag:last-child {
+        margin-left: 10px;
+    }
+    p {
+        font-family: "Catamaran";
+        display: inline;
+        ::ng-deep span {
+            opacity: 0;
+            transition: .4s;
+        }
+    }
+    .italic-tag {
+        font-size: 20px;
+        color: #4d4d4e;
+        font-family: "Dancing Script";
+    }
+}

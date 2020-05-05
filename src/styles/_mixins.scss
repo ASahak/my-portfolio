@@ -1,3 +1,4 @@
+@import "medias";
 // Small devices
 @mixin max-xs-s {
   @media screen and (max-width: #{$screen-max-xs-s}) {

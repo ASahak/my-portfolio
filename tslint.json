@@ -23,7 +23,7 @@
       "camelCase"
     ],
     "component-selector": [
-      true,
+      false,
       "element",
       "app",
       "kebab-case"
@@ -65,7 +65,7 @@
     ],
     "no-empty": false,
     "no-inferrable-types": [
-      true,
+      false,
       "ignore-params"
     ],
     "no-non-null-assertion": true,
@@ -87,11 +87,11 @@
     },
     "space-before-function-paren": {
       "options": {
-        "anonymous": "never",
+        "anonymous": "always",
         "asyncArrow": "always",
-        "constructor": "never",
-        "method": "never",
-        "named": "never"
+        "constructor": "always",
+        "method": "always",
+        "named": "always"
       }
     },
     "typedef-whitespace": {
@@ -130,7 +130,7 @@
       ]
     },
     "no-conflicting-lifecycle": true,
-    "no-host-metadata-property": true,
+    "no-host-metadata-property": false,
     "no-input-rename": false,
     "no-inputs-metadata-property": true,
     "no-output-native": true,
