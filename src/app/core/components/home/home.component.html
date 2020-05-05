@@ -1,3 +1,60 @@
-<p>
-    home
-</p>
+<section class="html-and-logo-content">
+    <div class="html_content">
+        <div class="html-content_top">
+            <p>
+                <span class="italic-tag">&#60; html &#62; </span>
+            </p>
+            <p>
+                <span class="italic-tag">&#60; body &#62; </span>
+            </p>
+        </div>
+        <div class="html-content_middle">
+            <app-main-title text="Hi,I'm Arthur,JS Engineer" [interval]="2"></app-main-title>
+            <p>Front End Development</p>
+            <app-button
+                text="Contact Me"
+                color="#08FDD8"
+                border="1px solid #08FDD8"
+                [padding]="[10, 20, 10, 20]"
+                [fontSize]="16"
+                textTransform="uppercase"
+                direction="left"
+                [margin]="['15px', '0px', '0px', '15px']"
+                background="transparent"
+                [hover]="{
+                    color: '#333',
+                    background: '#08FDD8'
+                }"
+                (onClick)="triggerOnClick($event)"
+            ></app-button>
+        </div>
+        <div class="html-content_bottom">
+            <p>
+                <span class="italic-tag">&#60;/ body &#62; </span>
+            </p>
+            <p>
+                <span class="italic-tag">&#60;/ html &#62; </span>
+            </p>
+        </div>
+    </div>
+    <div class="logo_content">
+        <svg xmlns="http://www.w3.org/2000/svg"
+            width="500"
+            height="500"
+             stroke-width="1"
+             stroke="#08FDD8"
+            class="logo-lg"
+        >
+            <text id="logo-big-lg" font-family="Tangerine" x="-10" y="420" fill="none" font-size="500">A</text>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="200"
+             height="200"
+             stroke-width="1"
+             stroke="#08FDD8"
+             class="logo-md"
+        >
+            <text id="logo-big-lg" font-family="Tangerine" x="-10" y="150" fill="none" font-size="200">A</text>
+        </svg>
+    </div>
+</section>
