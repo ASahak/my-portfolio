@@ -1,4 +1,8 @@
 <main>
     <app-aside-bar></app-aside-bar>
-    <router-outlet></router-outlet>
+    <app-main-loading *ngIf="isLoading"
+                      [@inOutAnimation]></app-main-loading>
+    <div [@fadeAnimation]="allowTrigger && outlet.isActivated ? outlet.activatedRoute : ''">
+        <router-outlet #outlet="outlet"></router-outlet>
+    </div>
 </main>

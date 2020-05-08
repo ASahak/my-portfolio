@@ -9,8 +9,9 @@ export class MainTitleComponent implements OnInit {
     @Input() text: string;
     @Input() interval: number;
 
-    constructor() {}
+    constructor () {
+    }
 
-    ngOnInit() {}
+    ngOnInit () {}
 
 }

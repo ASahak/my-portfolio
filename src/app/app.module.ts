@@ -11,6 +11,8 @@ import {SharedModule} from './shared/shared.module';
 import {AsideBarComponent} from '@corePath/components/aside-bar/aside-bar.component';
 import {SVGComponent} from '@app/shared/components/Icons';
 import {HomeComponent} from '@corePath/components/home/home.component';
+import {NotFoundComponent} from '@corePath/components/not-found/not-found.component';
+import {MainLoadingComponent} from '@app/shared/components/main-loading/main-loading.component';
 
 @NgModule({
     declarations: [
@@ -18,6 +20,8 @@ import {HomeComponent} from '@corePath/components/home/home.component';
         AsideBarComponent,
         SVGComponent,
         HomeComponent,
+        NotFoundComponent,
+        MainLoadingComponent,
     ],
     imports: [
         BrowserModule,

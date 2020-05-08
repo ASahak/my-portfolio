@@ -6,13 +6,13 @@ import {Directive, Renderer2, ElementRef, OnInit, Input} from '@angular/core';
 export class HomeTitleHiDirective implements OnInit{
     @Input() title: string;
     @Input() time: number;
-    constructor(
+    constructor (
         private renderer2: Renderer2,
         private elementRef: ElementRef,
     ) {
     }
 
-    ngOnInit(): void {
+    ngOnInit (): void {
         let everyLetter = '';
         const splitWord = this.title.split(',');
         splitWord.map((word, index) => {
@@ -28,6 +28,6 @@ export class HomeTitleHiDirective implements OnInit{
                 delay += this.time / (this.title.length - 1);
                 this.renderer2.setAttribute(this.elementRef.nativeElement.children[index], 'style', `transition: 0.4s; transition-delay: ${delay}s; opacity: 1;`)
             });
-        }, 0);
+        }, 100);
     }
 }

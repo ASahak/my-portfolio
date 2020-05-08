@@ -9,12 +9,12 @@
             </p>
         </div>
         <div class="html-content_middle">
-            <app-main-title text="Hi,I'm Arthur,JS Engineer" [interval]="2"></app-main-title>
+            <app-main-title *ngIf="renderTpl" text="Hi,I'm Arthur,JS Engineer" [interval]="2"></app-main-title>
             <p>Front End Development</p>
             <app-button
                 text="Contact Me"
-                color="#08FDD8"
-                border="1px solid #08FDD8"
+                [color]="mainBlueColor"
+                [border]="'1px solid ' + mainBlueColor"
                 [padding]="[10, 20, 10, 20]"
                 [fontSize]="16"
                 textTransform="uppercase"
@@ -23,7 +23,7 @@
                 background="transparent"
                 [hover]="{
                     color: '#333',
-                    background: '#08FDD8'
+                    background: mainBlueColor
                 }"
                 (onClick)="triggerOnClick($event)"
             ></app-button>
@@ -37,12 +37,12 @@
             </p>
         </div>
     </div>
-    <div class="logo_content">
+    <div class="logo_content" *ngIf="renderTpl" >
         <svg xmlns="http://www.w3.org/2000/svg"
             width="500"
             height="500"
              stroke-width="1"
-             stroke="#08FDD8"
+             [attr.stroke]="mainBlueColor"
             class="logo-lg"
         >
             <text id="logo-big-lg" font-family="Tangerine" x="-10" y="420" fill="none" font-size="500">A</text>
@@ -51,7 +51,7 @@
              width="200"
              height="200"
              stroke-width="1"
-             stroke="#08FDD8"
+             [attr.stroke]="mainBlueColor"
              class="logo-md"
         >
             <text id="logo-big-lg" font-family="Tangerine" x="-10" y="150" fill="none" font-size="200">A</text>
