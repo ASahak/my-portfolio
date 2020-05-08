@@ -1,4 +1,7 @@
 import {Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, Renderer2, OnDestroy, EventEmitter, Output} from '@angular/core';
+import {
+    MAIN_FONT_BLUE_COLOR
+} from '@corePath/constants';
 
 @Component({
     selector: 'app-button',
@@ -9,18 +12,18 @@ export class ButtonComponent implements OnInit, AfterViewInit, OnDestroy {
     @Input() text: string;
     @Input() background: string;
     @Input() textTransform: string;
-    @Input() fontSize: number = 14;
-    @Input() color: string = '#08FDD8';
-    @Input() border: string = '1px solid #08FDD8';
-    @Input() direction: string = 'left';
+    @Input() fontSize: number    = 14;
+    @Input() color: string       = MAIN_FONT_BLUE_COLOR;
+    @Input() border: string      = `1px solid ${MAIN_FONT_BLUE_COLOR}`;
+    @Input() direction: string   = 'left';
     @Input() hover: object;
     @Input() padding: Array<number>;
     @Input() margin: Array<string>;
     @Output() onClick = new EventEmitter<any>();
     @ViewChild('buttonParent') buttonParent: ElementRef;
     @ViewChild('childRef') childRef: ElementRef;
-    public style: object        = {};
-    private beforeStyle: object = {};
+    public style: object         = {};
+    private beforeStyle: object  = {};
     constructor (
         private renderer2: Renderer2
     ) {

@@ -1,3 +1,4 @@
+@import "variables";
 h1 {
     color: #fff;
     font-size: 45px;
@@ -17,7 +18,7 @@ h1 {
     }
     .italic-tag {
         font-size: 20px;
-        color: #4d4d4e;
+        color: $main-font-color;
         font-family: "Dancing Script";
     }
 }
