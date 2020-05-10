@@ -6,11 +6,13 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // Components
 import {HomeComponent} from '@corePath/components/home/home.component';
 import {NotFoundComponent} from '@corePath/components/not-found/not-found.component';
+import {ContactMeComponent} from '@corePath/components/contact-me/contact-me.component';
 
 const routes: Routes = [
-    {path: '', redirectTo: '/', pathMatch: 'full'},
+    {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: 'home', component: HomeComponent, data: {animation: 'HomePage'}},
     {path: '404', component: NotFoundComponent, data: {animation: '404'}},
+    {path: 'contact', component: ContactMeComponent},
     {path: '**', redirectTo: '/404'}
 ];
 

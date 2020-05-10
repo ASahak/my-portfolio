@@ -1,5 +1,5 @@
 <h1 class="main-title">
     <span class="italic-tag">&#60; h1 &#62; </span>
-    <p appHomeTitleHi [title]="text" [time]="interval"></p>
+    <p *ngIf="rerender" appHomeTitleHi [title]="text" [time]="interval"></p>
     <span class="italic-tag">&#60;/ h1 &#62; </span>
 </h1>

@@ -4,7 +4,7 @@ import {
     slideInAnimation,
     thinking
 } from './animation';
-import {Router, NavigationStart} from '@angular/router';
+import {Router, NavigationStart, NavigationEnd} from '@angular/router';
 import {RouterStateService} from '@app/shared/services/router-state.service';
 
 @Component({
@@ -18,8 +18,10 @@ import {RouterStateService} from '@app/shared/services/router-state.service';
     ],
 })
 export class AppComponent {
-    public allowTrigger: boolean = false;
-    public isLoading: boolean    = false;
+    public allowTrigger: boolean  = false;
+    public isLoading: boolean     = false;
+    public previousRoute: string  = '';
+    public navRouteName: string    = '';
     constructor (
         private router: Router,
         private routingState: RouterStateService
@@ -27,6 +29,13 @@ export class AppComponent {
         this.routingState.loadRouting();
 
         this.router.events.subscribe((val) => {
+            if (val instanceof NavigationEnd) {
+                this.navRouteName = val.url;
+                this.previousRoute = this.routingState.getPreviousUrl();
+                if (this.previousRoute && this.previousRoute !== this.navRouteName) {
+                    this.routingState.RerenderTitles();
+                }
+            }
             if (val instanceof NavigationStart) {
                 this.allowTrigger = true;
                 setTimeout(() => {

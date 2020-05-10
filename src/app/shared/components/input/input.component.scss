@@ -1,0 +1,25 @@
+@import "variables";
+.main-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    label {
+        color: $main-font-color;
+    }
+    input {
+        height: 40px;
+        background-color: #181818;
+        border: 0;
+        padding: 0 10px;
+        outline-color: $main-font-color;
+        color: #fff;
+    }
+    textarea {
+        resize: none;
+        padding: 10px;
+        color: #fff;
+        background-color: #181818;
+        border: 0;
+        outline-color: $main-font-color;
+    }
+}

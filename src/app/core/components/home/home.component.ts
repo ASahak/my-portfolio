@@ -1,13 +1,12 @@
 import {
     ChangeDetectorRef,
-    ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation, ApplicationRef
+    ChangeDetectionStrategy, Component, OnInit, OnDestroy, ViewEncapsulation, ApplicationRef
 } from '@angular/core';
 import {Router} from '@angular/router';
 import {
     MAIN_FONT_BLUE_COLOR
 } from '@corePath/constants';
 import {RouterStateService} from '@app/shared/services/router-state.service';
-import {Common} from '@corePath/enums';
 
 @Component({
     selector: 'app-home',
@@ -19,10 +18,10 @@ import {Common} from '@corePath/enums';
     },
     changeDetection: ChangeDetectionStrategy.Default
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
     public mainBlueColor: string  = MAIN_FONT_BLUE_COLOR;
     public renderTpl: boolean     = true;
-    private previousRoute: string = '';
+    private previousRouteSub = null;
     constructor (
         private ref: ChangeDetectorRef,
         private appTick: ApplicationRef,
@@ -30,21 +29,21 @@ export class HomeComponent implements OnInit {
         private routingState: RouterStateService
 
     ) {
-    }
-
-    triggerOnClick (data) {
-      console.log(data);
-    }
-
-    ngOnInit (): void {
-        this.previousRoute = this.routingState.getPreviousUrl();
-        if (this.previousRoute !== Common.previousPath) {
+        this.previousRouteSub = this.routingState.getSubjectRouter().subscribe(() => {
             setTimeout(() => {
                 this.renderTpl = false;
                 this.appTick.tick();
                 this.renderTpl = true;
             }, 3100);
-        }
+        });
     }
 
+    triggerOnClick (data) {
+    }
+
+    ngOnInit (): void {
+    }
+    ngOnDestroy () {
+        this.previousRouteSub.unsubscribe();
+    }
 }

@@ -11,6 +11,8 @@ import {
 export class ButtonComponent implements OnInit, AfterViewInit, OnDestroy {
     @Input() text: string;
     @Input() background: string;
+    @Input() typeBtn: string = 'button';
+    @Input() disabledBtn: boolean = false;
     @Input() textTransform: string;
     @Input() fontSize: number    = 14;
     @Input() color: string       = MAIN_FONT_BLUE_COLOR;
