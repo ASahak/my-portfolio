@@ -39,6 +39,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     triggerOnClick (data) {
+        this.router.navigate(['/contact']);
     }
 
     ngOnInit (): void {

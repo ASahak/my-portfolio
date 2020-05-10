@@ -10,10 +10,13 @@ import {environment} from '../environments/environment.prod';
 import {SharedModule} from './shared/shared.module';
 import {AsideBarComponent} from '@corePath/components/aside-bar/aside-bar.component';
 import {SVGComponent} from '@app/shared/components/Icons';
+
+// Pages
 import {HomeComponent} from '@corePath/components/home/home.component';
 import {NotFoundComponent} from '@corePath/components/not-found/not-found.component';
 import {MainLoadingComponent} from '@app/shared/components/main-loading/main-loading.component';
 import {ContactMeComponent} from '@corePath/components/contact-me/contact-me.component';
+import {AboutMeComponent} from '@corePath/components/about-me/about-me.component';
 
 @NgModule({
     declarations: [
@@ -24,6 +27,7 @@ import {ContactMeComponent} from '@corePath/components/contact-me/contact-me.com
         NotFoundComponent,
         MainLoadingComponent,
         ContactMeComponent,
+        AboutMeComponent,
     ],
     imports: [
         FormsModule,

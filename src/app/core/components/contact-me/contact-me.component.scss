@@ -11,11 +11,6 @@
         }
         .html-content_middle {
             max-width: 650px;
-            .desc-contact-p {
-                @include max-xs-s {
-                    display: none;
-                }
-            }
         }
         .contact-form {
             margin-top: 10px;

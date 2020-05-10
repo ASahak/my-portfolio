@@ -1,7 +1,11 @@
 @import "variables";
+@import "mixins";
 h1 {
     color: #fff;
     font-size: 45px;
+    @include max-xs-s {
+        font-size: 35px;
+    }
     span.italic-tag:first-child {
         display: block;
     }
