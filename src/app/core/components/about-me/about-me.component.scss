@@ -75,26 +75,26 @@ $speed: 5;
             .back {
                 animation-delay: -($speed/2) + s;
                 &:after {
-                    @include pyramidBg("../../../../assets/logos/ng.png", 40px, -22px, 50px);
+                    @include pyramidBg("/assets/logos/ng.png", 40px, -22px, 50px);
                 }
             }
 
             .right {
                 animation-delay: -($speed/4) + s;
                 &:after {
-                    @include pyramidBg("../../../../assets/logos/react.png", 40px, -22px, 50px);
+                    @include pyramidBg("/assets/logos/react.png", 40px, -22px, 50px);
                 }
             }
 
             .front {
                 &:after {
-                    @include pyramidBg("../../../../assets/logos/js.png", 40px, -22px, 50px);
+                    @include pyramidBg("/assets/logos/js.png", 40px, -22px, 50px);
                 }
             }
             .left {
                 animation-delay: -($speed * 0.75) + s;
                 &:after {
-                    @include pyramidBg("../../../../assets/logos/vue.png", 40px, -22px, 50px);
+                    @include pyramidBg("/assets/logos/vue.png", 40px, -22px, 50px);
                 }
             }
         }
@@ -135,26 +135,26 @@ $speed: 5;
             .back {
                 animation-delay: -($speed/2) + s;
                 &:after {
-                    @include pyramidBg("../../../../assets/logos/ng.png", 70px, -35px, 110px);
+                    @include pyramidBg("/assets/logos/ng.png", 70px, -35px, 110px);
                 }
             }
 
             .right {
                 animation-delay: -($speed/4) + s;
                 &:after {
-                    @include pyramidBg("../../../../assets/logos/react.png", 70px, -35px, 110px);
+                    @include pyramidBg("/assets/logos/react.png", 70px, -35px, 110px);
                 }
             }
 
             .front {
                 &:after {
-                    @include pyramidBg("../../../../assets/logos/js.png", 70px, -35px, 110px);
+                    @include pyramidBg("/assets/logos/js.png", 70px, -35px, 110px);
                 }
             }
             .left {
                 animation-delay: -($speed * 0.75) + s;
                 &:after {
-                    @include pyramidBg("../../../../assets/logos/vue.png", 70px, -35px, 110px);
+                    @include pyramidBg("/assets/logos/vue.png", 70px, -35px, 110px);
                 }
             }
 
