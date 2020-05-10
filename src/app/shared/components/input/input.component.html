@@ -1,0 +1,20 @@
+<div class="main-input-wrapper" [formGroup]="parentForm">
+    <label [attr.id]="withLabel.id || null">{{withLabel.name}}</label>
+    <ng-container *ngIf="inputType === 'textarea'; then textarea; else input" ></ng-container>
+    <ng-template #textarea>
+        <textarea
+            rows="4"
+            [placeholder]="placeholder"
+            [formControlName]="controlName"
+            [attr.id]="withLabel.id || null"
+        ></textarea>
+    </ng-template>
+    <ng-template #input>
+        <input
+            [attr.type]="inputType"
+            [attr.placeholder]="placeholder"
+            [formControlName]="controlName"
+            [attr.id]="withLabel.id || null" />
+    </ng-template>
+    <app-control-messages [control]="control"></app-control-messages>
+</div>

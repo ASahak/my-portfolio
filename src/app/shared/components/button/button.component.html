@@ -1,3 +1,10 @@
 <div #buttonParent>
-    <button #childRef class="btn-component" [style]="style" (click)="sendOutput()">{{text}}</button>
+    <button
+        #childRef
+        class="btn-component"
+        [style]="style"
+        (click)="sendOutput()"
+        [attr.type]="typeBtn"
+        [disabled]="disabledBtn"
+    >{{text}}</button>
 </div>

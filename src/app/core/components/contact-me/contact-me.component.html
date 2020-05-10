@@ -1,0 +1,73 @@
+<div class="container-contact">
+    <div class="container-contact_left">
+        <div class="html_content">
+            <div class="html-content_top">
+                <p>
+                    <span class="italic-tag">&#60; html &#62; </span>
+                </p>
+                <p>
+                    <span class="italic-tag">&#60; body &#62; </span>
+                </p>
+            </div>
+            <div class="html-content_middle">
+                <app-main-title text="Contact Me" [interval]="1"></app-main-title>
+                <p class="desc-contact-p">I am interested in JS Engineering – especially ambitious or large projects. However, if you have other request or question, don’t hesitate to contact me using below form either.</p>
+                <form [formGroup]="contactForm" (submit)="sendMessage()" class="contact-form">
+                    <div class="two-input-together">
+                        <app-input
+                            inputType="text"
+                            placeholder="Name"
+                            [parentForm]="contactForm"
+                            controlName="name"
+                            getForm="name"
+                            [control]="contactForm.get('name')"
+                        ></app-input>
+                        <app-input
+                            inputType="email"
+                            placeholder="Email"
+                            [parentForm]="contactForm"
+                            controlName="email"
+                            getForm="email"
+                            [control]="contactForm.get('email')"
+                        ></app-input>
+                    </div>
+                    <app-input
+                        inputType="textarea"
+                        placeholder="Message"
+                        [parentForm]="contactForm"
+                        controlName="message"
+                        getForm="message"
+                        [control]="contactForm.get('message')"
+                    ></app-input>
+                    <app-button
+                        text="Send"
+                        [color]="mainBlueColor"
+                        [border]="'1px solid ' + mainBlueColor"
+                        [padding]="[7, 20, 7, 20]"
+                        [fontSize]="13"
+                        textTransform="uppercase"
+                        direction="left"
+                        [margin]="['0px', '0px', '0px', '0px']"
+                        background="transparent"
+                        typeBtn="submit"
+                        [hover]="{
+                            color: '#333',
+                            background: mainBlueColor
+                        }"
+                        [disabledBtn]="!contactForm.valid"
+                    ></app-button>
+                </form>
+            </div>
+            <div class="html-content_bottom">
+                <p>
+                    <span class="italic-tag">&#60;/ body &#62; </span>
+                </p>
+                <p>
+                    <span class="italic-tag">&#60;/ html &#62; </span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container-contact_right">
+    </div>
+</div>
