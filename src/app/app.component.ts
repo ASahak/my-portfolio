@@ -21,7 +21,7 @@ export class AppComponent {
     public allowTrigger: boolean  = false;
     public isLoading: boolean     = false;
     public previousRoute: string  = '';
-    public navRouteName: string    = '';
+    public navRouteName: string   = '';
     constructor (
         private router: Router,
         private routingState: RouterStateService

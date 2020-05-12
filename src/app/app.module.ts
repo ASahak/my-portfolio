@@ -17,6 +17,7 @@ import {NotFoundComponent} from '@corePath/components/not-found/not-found.compon
 import {MainLoadingComponent} from '@app/shared/components/main-loading/main-loading.component';
 import {ContactMeComponent} from '@corePath/components/contact-me/contact-me.component';
 import {AboutMeComponent} from '@corePath/components/about-me/about-me.component';
+import {SkillsComponent} from '@corePath/components/skills/skills.component';
 
 @NgModule({
     declarations: [
@@ -28,6 +29,7 @@ import {AboutMeComponent} from '@corePath/components/about-me/about-me.component
         MainLoadingComponent,
         ContactMeComponent,
         AboutMeComponent,
+        SkillsComponent,
     ],
     imports: [
         FormsModule,

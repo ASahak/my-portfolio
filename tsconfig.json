@@ -5,6 +5,7 @@
     "paths": {
       "@app/*": ["app/*"],
       "@assets/*": ["assets/*"],
+      "@lib/*": ["lib/*"],
       "@corePath/*": ["app/core/*"]
     },
     "outDir": "./dist/out-tsc",
