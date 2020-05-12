@@ -8,6 +8,7 @@ import {HomeComponent} from '@corePath/components/home/home.component';
 import {NotFoundComponent} from '@corePath/components/not-found/not-found.component';
 import {ContactMeComponent} from '@corePath/components/contact-me/contact-me.component';
 import {AboutMeComponent} from '@corePath/components/about-me/about-me.component';
+import {SkillsComponent} from '@corePath/components/skills/skills.component';
 
 const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -15,6 +16,7 @@ const routes: Routes = [
     {path: '404', component: NotFoundComponent, data: {animation: '404'}},
     {path: 'contact', component: ContactMeComponent},
     {path: 'about', component: AboutMeComponent},
+    {path: 'skills', component: SkillsComponent},
     {path: '**', redirectTo: '/404'}
 ];
 

@@ -1,0 +1,54 @@
+@import "mixins";
+.container-skills {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    @include max-sm {
+        flex-direction: column;
+    }
+    &_left {
+        width: 50%;
+        height: 100%;
+        @include max-sm {
+            width: 100%;
+        }
+
+        .html-content_middle {
+            max-width: 650px;
+            #myCanvasContainer {
+                canvas {
+                    width: 100%;
+                }
+            }
+            .desc-contact-p {
+                margin-bottom: 15px;
+                @include max-xs-s {
+                    font-size: 13px;
+                    letter-spacing: 1px;
+                }
+                @include max-sm {
+                    letter-spacing: 1px;
+                }
+                @include max-md {
+                    letter-spacing: 1.5px;
+                }
+            }
+        }
+    }
+    &_right {
+        height: 100%;
+        width: 50%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        #myCanvasContainer {
+            canvas {
+                width: 100%;
+            }
+        }
+        @include max-sm {
+            width: 100%;
+        }
+    }
+}
