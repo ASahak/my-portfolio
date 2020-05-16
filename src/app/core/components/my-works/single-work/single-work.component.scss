@@ -1,0 +1,49 @@
+:host{
+    display: inline-block;
+    > div {
+        position: absolute;
+        transition: .4s;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            transition: .4s;
+            background-color: #18181894;
+        }
+        &:hover:after {
+            background-color: transparent;
+        }
+        > a {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(7px);
+            transition: 0.4s;
+            border: 1px solid #08fdd8;
+            color: #08fdd8;
+            font-size: 16px;
+            margin: 15px 15px 0px 0px;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            background: #181818bf;
+            text-decoration: none;
+            z-index: 12;
+        }
+        &:hover a {
+            transform: translateY(0px);
+            opacity: 1;
+            visibility: visible;
+        }
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

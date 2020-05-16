@@ -18,6 +18,7 @@ import {MainLoadingComponent} from '@app/shared/components/main-loading/main-loa
 import {ContactMeComponent} from '@corePath/components/contact-me/contact-me.component';
 import {AboutMeComponent} from '@corePath/components/about-me/about-me.component';
 import {SkillsComponent} from '@corePath/components/skills/skills.component';
+import {MyWorksComponent} from '@corePath/components/my-works/my-works.component';
 
 @NgModule({
     declarations: [
@@ -30,6 +31,7 @@ import {SkillsComponent} from '@corePath/components/skills/skills.component';
         ContactMeComponent,
         AboutMeComponent,
         SkillsComponent,
+        MyWorksComponent,
     ],
     imports: [
         FormsModule,
