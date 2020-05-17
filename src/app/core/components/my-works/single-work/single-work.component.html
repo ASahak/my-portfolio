@@ -5,5 +5,11 @@
     top: elementData.y + 'px',
     backgroundImage: 'url(' + imgSrc + ')'
 }" [attr.data-index]="dataPosition">
+    <div class="date">
+        Prepared at - {{date}}
+    </div>
     <a [attr.href]="projectURL" target="_blank">View Project</a>
+    <div class="name">
+        {{name}}
+    </div>
 </div>

@@ -1,0 +1,13 @@
+<div class="every-programme"
+    [style]="{
+        backgroundImage: 'url(' + data.linkURL + ')'
+    }"
+>
+    <div class="date">
+        Prepared at - {{momentDate}}
+    </div>
+    <a [attr.href]="data.link" target="_blank">View Project</a>
+    <div class="name">
+        {{data.name}}
+    </div>
+</div>

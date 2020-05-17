@@ -8,6 +8,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
         &:after {
             content: "";
             position: absolute;
@@ -26,8 +27,8 @@
             visibility: hidden;
             transform: translateY(7px);
             transition: 0.4s;
-            border: 1px solid #08fdd8;
-            color: #08fdd8;
+            border: 1px solid #fff;
+            color: #fff;
             font-size: 16px;
             margin: 15px 15px 0px 0px;
             padding: 10px 20px;
@@ -40,6 +41,48 @@
             transform: translateY(0px);
             opacity: 1;
             visibility: visible;
+        }
+        .name {
+            position: absolute;
+            bottom: 0;
+            background-color: #181818bf;
+            width: calc(100% - 30px);
+            text-align: center;
+            color: #fff;
+            transition: .4s;
+            transform: translateY(15px);
+            opacity: 0;
+            visibility: hidden;
+            text-transform: uppercase;
+            padding: 5px 15px;
+            font-weight: 600;
+            height: 30px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        &:hover .name {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0px);
+        }
+        .date {
+            position: absolute;
+            top: 0;
+            background-color: #181818bf;
+            width: calc(100% - 30px);
+            text-align: center;
+            color: #fff;
+            transition: .4s;
+            transform: translateY(-15px);
+            opacity: 0;
+            visibility: hidden;
+            padding: 5px 15px;
+        }
+        &:hover .date {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0px);
         }
         img {
             height: 100%;

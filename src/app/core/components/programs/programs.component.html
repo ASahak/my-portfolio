@@ -1,0 +1,14 @@
+<section>
+    <div class="shuffle-header">
+        <button (click)="filterPrograms('*')" [class.active-btn]="publicLanguage === '*'">All</button>
+        <button (click)="filterPrograms(language)" [class.active-btn]="publicLanguage === language" *ngFor="let language of generateBtns()">{{language}}</button>
+    </div>
+
+    <div class="shuffle-container" [@cardAnimation]="filteredProgrammes.length + publicLanguage">
+        <div class="shuffle-item" *ngFor="let item of filteredProgrammes">
+            <app-single-programm
+                [data]="item"
+            ></app-single-programm>
+        </div>
+    </div>
+</section>

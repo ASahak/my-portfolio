@@ -38,10 +38,15 @@ export class AppComponent {
             }
             if (val instanceof NavigationStart) {
                 this.allowTrigger = true;
+                const mainTag = document.querySelector('main');
+                mainTag?.setAttribute('style', 'overflow: hidden');
                 setTimeout(() => {
                     this.isLoading = true;
                     setTimeout(() => {
                         this.isLoading = false;
+                        setTimeout(() => {
+                            mainTag?.removeAttribute('style');
+                        }, 1200);
                     }, 2000);
                 }, 300);
             }
