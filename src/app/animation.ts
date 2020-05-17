@@ -6,7 +6,33 @@ import {
     group,
     animateChild,
     animate,
+    stagger,
+    keyframes,
 } from '@angular/animations';
+
+    // Trigger animation cards array
+export const cardAnimation = trigger('cardAnimation', [
+    // Transition from any state to any state
+    transition('* <=> *', [
+        // Initially the all cards are not visible
+        query(':enter', style({ opacity: 0 }), { optional: true }),
+
+        // Each card will appear sequentially with the delay of 300ms
+        query(':enter', stagger('10ms', [
+            animate('.3s ease-in', keyframes([
+                style({ opacity: 0, transform: 'translateY(-50%)', offset: 0 }),
+                style({ opacity: .3, transform: 'translateY(-10px) scale(0.9)', offset: 0.1 }),
+                style({ opacity: 1, transform: 'translateY(0)', offset: 1 }),
+            ]))]), { optional: true }),
+
+        // Cards will disappear sequentially with the delay of 300ms
+        query(':leave', stagger('10ms', [
+            animate('300ms ease-out', keyframes([
+                style({ display: 'none', offset: 0 }),
+            ]))]), { optional: true })
+    ]),
+]);
+
 
 export const thinking = trigger(
     'inOutAnimation',

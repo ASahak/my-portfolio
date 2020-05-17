@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import * as moment from 'moment';
 
 @Component({
     selector: 'app-single-work',
@@ -7,6 +8,8 @@ import {Component, OnInit} from '@angular/core';
 })
 export class SingleWorkComponent implements OnInit {
     public imgSrc: string;
+    public name: string;
+    public date: any;
     public dataPosition: number;
     public projectURL: string;
     public elementData: object;
@@ -14,6 +17,7 @@ export class SingleWorkComponent implements OnInit {
     }
 
     ngOnInit (): void {
+        this.date = moment(this.date).format('ll');
     }
 
 }

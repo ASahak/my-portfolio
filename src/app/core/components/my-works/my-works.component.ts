@@ -13,7 +13,7 @@ import {
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import {SingleWorkComponent} from '@corePath/components/my-works/single-work/single-work.component';
-import {Works} from '@corePath/interfaces/common';
+import {Works} from '@app/core/models/common';
 import {RouterStateService} from '@app/shared/services/router-state.service';
 
 @Component({
@@ -266,6 +266,8 @@ export class MyWorksComponent implements OnInit, OnDestroy, AfterViewInit {
                                     direction: 'left'
                                 }
                             });
+                            comp.instance.name          = this.myWorks[i * this.rowCount + j].name;
+                            comp.instance.date          = this.myWorks[i * this.rowCount + j].preparedDate;
                             comp.instance.imgSrc        = this.myWorks[i * this.rowCount + j].linkUrl;
                             comp.instance.elementData   = everyElement;
                             comp.instance.dataPosition  = i * this.rowCount + j;

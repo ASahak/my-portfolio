@@ -1,0 +1,68 @@
+@import "mixins";
+.shuffle-header {
+    display: flex;
+    width: 100%;
+    height: 71.8px;
+    background-color: #181818;
+    overflow-y: hidden;
+    align-items: center;
+    z-index: 22;
+    justify-content: center;
+    @include max-xs {
+        justify-content: flex-start;
+    }
+    &::-webkit-scrollbar {
+        height: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #08FDD8;
+        border-radius: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 2px #08FDD8;
+        border-radius: 5px;
+    }
+    > button {
+        white-space: nowrap;
+        height: 35px;
+        transition: 0.4s;
+        border: 1px solid #08fdd8;
+        color: #08fdd8;
+        margin: 0px 15px 0px 0px;
+        padding: 7px 13px;
+        background: #181818bf;
+        text-decoration: none;
+        cursor: pointer;
+        outline: none;
+        font-size: 13px;
+        &:hover, &.active-btn{
+            background-color: #08fdd8;
+            color: #1D1D1D;
+        }
+    }
+}
+.shuffle-container{
+    display: flex;
+    flex-wrap: wrap;
+    .shuffle-item {
+        height: 250px;
+        width: 25%;
+        @include min-sm-max-md {
+            height: 250px;
+            width: 33.33%;
+        }
+        @include min-md-max-lg {
+            height: 250px;
+            width: 33.33%;
+        }
+        @include min-xs-max-sm {
+            height: 250px;
+            width: 50%;
+        }
+        @include max-xs {
+            height: 350px;
+            width: 100%;
+        }
+    }
+}
+
