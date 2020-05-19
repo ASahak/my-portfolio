@@ -41,10 +41,10 @@
         }
     }
 }
-.shuffle-container{
+.grid {
     display: flex;
     flex-wrap: wrap;
-    .shuffle-item {
+    .grid-item {
         height: 250px;
         width: 25%;
         @include min-sm-max-md {
@@ -65,4 +65,5 @@
         }
     }
 }
+
 
