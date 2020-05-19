@@ -130,7 +130,7 @@ export class ProgramsComponent implements OnInit, AfterViewInit {
         }, {
             name: 'Weather Network',
             isPublic: true,
-            link: 'https://weathernetwork.herokuapp.com/',
+            link: 'https://weather-network.now.sh/',
             language: 'Vue',
             preparedDate: 1544385600000,
             linkURL: 'https://firebasestorage.googleapis.com/v0/b/my-cv-ac336.appspot.com/o/ProgramsPhotos%2F1544644543278_ff.png?alt=media&token=e7ccfa5a-e7be-4b8e-a57e-8a86c6333aa8'

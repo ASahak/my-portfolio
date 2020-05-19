@@ -20,9 +20,9 @@ export const cardAnimation = trigger('cardAnimation', [
         // Each card will appear sequentially with the delay of 300ms
         query(':enter', stagger('10ms', [
             animate('.3s ease-in', keyframes([
-                style({ opacity: 0, transform: 'translateY(-50%)', offset: 0 }),
-                style({ opacity: .3, transform: 'translateY(-10px) scale(0.9)', offset: 0.1 }),
-                style({ opacity: 1, transform: 'translateY(0)', offset: 1 }),
+                style({ opacity: 0, offset: 0 }),
+                style({ opacity: .3, transform: 'scale(0.9)', offset: 0.1 }),
+                style({ opacity: 1, transform: 'scale(1)', offset: 1 }),
             ]))]), { optional: true }),
 
         // Cards will disappear sequentially with the delay of 300ms
