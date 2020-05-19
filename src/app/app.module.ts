@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {AngularFireModule} from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import {environment} from '../environments/environment.prod';
 
 // Shared module
@@ -44,6 +45,7 @@ import {SingleProgrammComponent} from '@corePath/components/programs/single-prog
         AppRoutingModule,
         AngularFireModule.initializeApp(environment.firebaseConfig),
         SharedModule,
+        AngularFireStorageModule,
         // BrowserModule.withServerTransition({ appId: 'serverApp' }),
     ],
     providers: [],

@@ -65,5 +65,11 @@
                 <i class="fa fa-github" aria-hidden="true"></i>
             </a>
         </li>
+        <li *ngIf="pdfURL">
+            <a [href]="pdfURL" alt="cv" target="_blank" class="cv-hover">
+                <img src="/assets/Icons/cv.png" alt="">
+                <img src="/assets/Icons/cv_active.png" alt="">
+            </a>
+        </li>
     </ul>
 </div>
