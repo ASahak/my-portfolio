@@ -1,16 +1,15 @@
-import {Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
-import {
-    cardAnimation
-} from '@app/animation';
+import {Component, OnInit, AfterViewInit} from '@angular/core';
 import {
     Programms
 } from '@corePath/models/common';
+import 'jquery/dist/jquery.min.js';
+import Isotope from '@lib/isotope.pkgd.min';
+
 
 @Component({
     selector: 'app-programs',
     templateUrl: './programs.component.html',
     styleUrls: ['./programs.component.scss'],
-    animations: [cardAnimation]
 })
 export class ProgramsComponent implements OnInit, AfterViewInit {
 
@@ -178,17 +177,17 @@ export class ProgramsComponent implements OnInit, AfterViewInit {
             linkURL: 'https://firebasestorage.googleapis.com/v0/b/my-cv-ac336.appspot.com/o/ProgramsPhotos%2F1548707967384_Untitled-1.jpg?alt=media&token=f720c71e-3ca5-4042-b9e3-860fefa5f483'
         }
     ];
-    public filteredProgrammes: Array<Programms> = this.myPrograms;
     public publicLanguage: string = '*';
+    private isotope: any;
     constructor () {}
     public filterPrograms (type) {
-        if (type === '*') {
-            this.filteredProgrammes = this.myPrograms;
-        } else {
-            this.filteredProgrammes = this.myPrograms.filter(item => item.language === type);
-        }
+        const mainTag = document.querySelector('main');
+        mainTag?.setAttribute('style', 'overflow: hidden');
+        this.isotope.arrange({filter: (type === '*') ? '*' : '.' + type});
         this.publicLanguage = type;
-        return this.filteredProgrammes;
+        setTimeout(() => {
+            mainTag?.removeAttribute('style');
+        }, 400);
     }
     public generateBtns () {
         return this.myPrograms.reduce((acc, item) => {
@@ -198,9 +197,18 @@ export class ProgramsComponent implements OnInit, AfterViewInit {
             return acc;
         }, []);
     }
+    public replaceLanguage (language) {
+        return language?.replace(/[&\/\\#,+()$~% .'":*?<>{}]/g, '').toLowerCase();
+    }
     ngOnInit (): void {
     }
     ngAfterViewInit (): void {
+        const elem = document.querySelector('.grid');
+        this.isotope = new Isotope( elem, {
+            // options
+            itemSelector: '.grid-item',
+            layoutMode: 'fitRows'
+        });
     }
 
 }
