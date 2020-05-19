@@ -72,8 +72,24 @@
             text-align: center;
             > a {
                 padding: 10px;
+                &.cv-hover {
+                    display: flex;
+                    justify-content: center;
+                }
+                > img {
+                    max-width: 35px;
+                }
+                > img:last-child {
+                    display: none;
+                }
                 i {
                     color: $main-font-color;
+                }
+                &:hover > img:first-child {
+                    display: none;
+                }
+                &:hover > img:last-child {
+                    display: block;
                 }
                 &:hover i {
                     color: $main-font-blue-color;
