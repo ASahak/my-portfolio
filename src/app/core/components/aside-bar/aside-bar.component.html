@@ -71,5 +71,8 @@
                 <img src="/assets/Icons/cv_active.png" alt="">
             </a>
         </li>
+        <li class="log-out" *ngIf="isLogged">
+            <span class="lnr lnr-exit" (click)="logOut()"></span>
+        </li>
     </ul>
 </div>
