@@ -1,5 +1,5 @@
 <main>
-    <app-aside-bar></app-aside-bar>
+    <app-aside-bar *ngIf="isInAdminPage"></app-aside-bar>
     <app-main-loading *ngIf="isLoading"
                       [@inOutAnimation]></app-main-loading>
     <div [@fadeAnimation]="allowTrigger && outlet.isActivated ? outlet.activatedRoute : ''">

@@ -1,0 +1,36 @@
+<form [formGroup]="adminForm" (submit)="login()" class="admin-form">
+    <h3>Admin Panel</h3>
+    <app-input
+        [withLabel]="{id: 'email', name: 'Email'}"
+        inputType="text"
+        [parentForm]="adminForm"
+        controlName="email"
+        getForm="email"
+        [control]="adminForm.get('email')"
+    ></app-input>
+    <app-input
+        [withLabel]="{id: 'password', name: 'Passwrod'}"
+        inputType="password"
+        [parentForm]="adminForm"
+        controlName="password"
+        getForm="password"
+        [control]="adminForm.get('password')"
+    ></app-input>
+    <app-button
+        text="Log in"
+        [color]="mainBlueColor"
+        [border]="'1px solid ' + mainBlueColor"
+        [padding]="[7, 20, 7, 20]"
+        [fontSize]="13"
+        textTransform="uppercase"
+        direction="left"
+        [margin]="['10px', '0px', '0px', '0px']"
+        background="transparent"
+        typeBtn="submit"
+        [hover]="{
+            color: '#333',
+            background: mainBlueColor
+        }"
+        [disabledBtn]="!adminForm.valid || loginProcess"
+    ></app-button>
+</form>

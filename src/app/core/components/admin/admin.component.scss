@@ -1,0 +1,26 @@
+@import "mixins";
+.admin-form {
+    position: fixed;
+    width: 40vw;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 10vh;
+    background-color: #181717;
+    padding: 30px;
+    max-width: 550px;
+    @include max-xs {
+        width: 60vw;
+    }
+    @include max-xs-s {
+        width: 80vw;
+    }
+    h3 {
+        font-size: 24px;
+        color: #fff;
+        text-align: center;
+    }
+    ::ng-deep input {
+        background-color: #1D1D1D !important;
+    }
+}

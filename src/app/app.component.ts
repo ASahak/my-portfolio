@@ -4,6 +4,9 @@ import {
     slideInAnimation,
     thinking
 } from './animation';
+import {
+    Common
+} from '@corePath/enums';
 import {Router, NavigationStart, NavigationEnd} from '@angular/router';
 import {RouterStateService} from '@app/shared/services/router-state.service';
 
@@ -22,6 +25,7 @@ export class AppComponent {
     public isLoading: boolean     = false;
     public previousRoute: string  = '';
     public navRouteName: string   = '';
+    public isInAdminPage: boolean = false;
     constructor (
         private router: Router,
         private routingState: RouterStateService
@@ -31,6 +35,9 @@ export class AppComponent {
         this.router.events.subscribe((val) => {
             if (val instanceof NavigationEnd) {
                 this.navRouteName = val.url;
+
+                this.isInAdminPage = (this.navRouteName !== Common.adminPath);
+
                 this.previousRoute = this.routingState.getPreviousUrl();
                 if (this.previousRoute && this.previousRoute !== this.navRouteName) {
                     this.routingState.RerenderTitles();

@@ -130,6 +130,7 @@
                 "check-typecast"
             ]
         },
+        "no-trailing-whitespace": false,
         "no-conflicting-lifecycle": true,
         "no-host-metadata-property": false,
         "no-input-rename": false,

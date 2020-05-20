@@ -1,6 +1,7 @@
 enum Common {
-    previousPath = '/home',
-    CV_NAME = 'ArthurCV.pdf',
+    homePath        = '/home',
+    adminPath       = '/admin',
+    CV_NAME         = 'ArthurCV.pdf',
 }
 
 export {

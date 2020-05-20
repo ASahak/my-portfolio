@@ -95,6 +95,17 @@
                     color: $main-font-blue-color;
                 }
             }
+            &.log-out {
+                span {
+                    margin-left: 5px;
+                    color: $main-font-color;
+                    font-size: 23px;
+                    cursor: pointer;
+                }
+                & span:hover  {
+                    color: $main-font-blue-color;
+                }
+            }
         }
     }
 }

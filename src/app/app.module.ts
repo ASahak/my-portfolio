@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {AngularFireModule} from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import {environment} from '../environments/environment.prod';
 
@@ -22,6 +23,7 @@ import {SkillsComponent} from '@corePath/components/skills/skills.component';
 import {MyWorksComponent} from '@corePath/components/my-works/my-works.component';
 import {ProgramsComponent} from '@corePath/components/programs/programs.component';
 import {SingleProgrammComponent} from '@corePath/components/programs/single-programm/single-programm.component';
+import {AdminComponent} from '@corePath/components/admin/admin.component';
 
 @NgModule({
     declarations: [
@@ -37,6 +39,7 @@ import {SingleProgrammComponent} from '@corePath/components/programs/single-prog
         MyWorksComponent,
         ProgramsComponent,
         SingleProgrammComponent,
+        AdminComponent,
     ],
     imports: [
         FormsModule,
@@ -45,6 +48,7 @@ import {SingleProgrammComponent} from '@corePath/components/programs/single-prog
         AppRoutingModule,
         AngularFireModule.initializeApp(environment.firebaseConfig),
         SharedModule,
+        AngularFireAuthModule,
         AngularFireStorageModule,
         // BrowserModule.withServerTransition({ appId: 'serverApp' }),
     ],

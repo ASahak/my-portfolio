@@ -10,7 +10,7 @@ import {
 })
 export class ButtonComponent implements OnInit, AfterViewInit, OnDestroy {
     @Input() text: string;
-    @Input() background: string;
+    @Input() background: string = 'transparent';
     @Input() typeBtn: string = 'button';
     @Input() disabledBtn: boolean = false;
     @Input() textTransform: string;
@@ -77,6 +77,7 @@ export class ButtonComponent implements OnInit, AfterViewInit, OnDestroy {
             ...this.__padding(),
             border: this.border,
             color: this.color,
+            background: this.background,
             fontSize: this.fontSize + 'px',
             ...(this.textTransform && {textTransform: this.textTransform})
         });

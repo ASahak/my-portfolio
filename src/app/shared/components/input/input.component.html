@@ -1,5 +1,5 @@
 <div class="main-input-wrapper" [formGroup]="parentForm">
-    <label [attr.id]="withLabel.id || null">{{withLabel.name}}</label>
+    <label *ngIf="withLabel.id" [attr.for]="withLabel.id || null">{{withLabel.name}}</label>
     <ng-container *ngIf="inputType === 'textarea'; then textarea; else input" ></ng-container>
     <ng-template #textarea>
         <textarea
