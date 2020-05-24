@@ -11,10 +11,12 @@
     </ng-template>
     <ng-template #input>
         <input
+            (change)="inputType === 'checkbox' && checkboxChange($event)"
+            [attr.checked]="parentForm.get(this.controlName)?.value || null"
             [attr.type]="inputType"
             [attr.placeholder]="placeholder"
             [formControlName]="controlName"
             [attr.id]="withLabel.id || null" />
     </ng-template>
-    <app-control-messages [control]="control"></app-control-messages>
+    <app-control-messages *ngIf="control" [control]="control"></app-control-messages>
 </div>

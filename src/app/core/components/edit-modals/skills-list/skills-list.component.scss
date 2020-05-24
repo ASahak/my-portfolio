@@ -1,0 +1,27 @@
+:host {
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        > span {
+            background-color: #1D1D1D;
+            color: #4d4d4e;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            border-radius: 4px;
+            margin-right: 8px;
+            margin-top: 5px;
+            .lnr-cross {
+                margin-left: 8px;
+                cursor: pointer;
+                background: #e93d3d;
+                color: #fff;
+                font-size: 11px;
+                padding: 1px;
+                border-radius: 2px;
+            }
+        }
+    }
+}

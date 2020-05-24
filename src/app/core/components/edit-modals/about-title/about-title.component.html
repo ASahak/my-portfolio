@@ -1,0 +1,73 @@
+<div>
+    <h3>{{config.data.title}}</h3>
+    <form [formGroup]="aboutTitleForm" (submit)="save()">
+        <app-input
+            inputType="text"
+            placeholder="Title"
+            [parentForm]="aboutTitleForm"
+            controlName="title"
+            getForm="title"
+            [control]="aboutTitleForm.get('title')"
+        ></app-input>
+        <app-input
+            inputType="textarea"
+            placeholder="Description"
+            [parentForm]="aboutTitleForm"
+            controlName="description"
+            getForm="description"
+            [control]="aboutTitleForm.get('description')"
+        ></app-input>
+        <app-input
+            inputType="text"
+            placeholder="Working Place Name"
+            [parentForm]="aboutTitleForm"
+            controlName="workingPlaceName"
+            getForm="workingPlaceName"
+            [control]="aboutTitleForm.get('workingPlaceName')"
+        ></app-input>
+        <app-input
+            inputType="text"
+            placeholder="Working Place Url"
+            [parentForm]="aboutTitleForm"
+            controlName="workingPlaceUrl"
+            getForm="workingPlaceUrl"
+            [control]="aboutTitleForm.get('workingPlaceUrl')"
+        ></app-input>
+        <div class="actions">
+            <app-button
+                text="Cancel"
+                [color]="mainBlueColor"
+                [border]="'1px solid ' + mainBlueColor"
+                [padding]="[7, 20, 7, 20]"
+                [fontSize]="13"
+                textTransform="uppercase"
+                direction="left"
+                [margin]="['10px', '15px', '0px', '0px']"
+                background="transparent"
+                typeBtn="button"
+                [hover]="{
+                    color: '#333',
+                    background: mainBlueColor
+                }"
+                (onClick)="onClose()"
+            ></app-button>
+            <app-button
+                text="Save"
+                [color]="mainBlueColor"
+                [border]="'1px solid ' + mainBlueColor"
+                [padding]="[7, 20, 7, 20]"
+                [fontSize]="13"
+                textTransform="uppercase"
+                direction="left"
+                [margin]="['10px', '0px', '0px', '0px']"
+                background="transparent"
+                typeBtn="submit"
+                [hover]="{
+                    color: '#333',
+                    background: mainBlueColor
+                }"
+                [disabledBtn]="!aboutTitleForm.valid"
+            ></app-button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,65 @@
+<div>
+    <h3>{{config.data.title}}</h3>
+    <form [formGroup]="editLinksForm" (submit)="save()">
+        <app-input
+            inputType="text"
+            placeholder="Facebook"
+            [parentForm]="editLinksForm"
+            controlName="fb"
+            getForm="fb"
+            [control]="editLinksForm.get('fb')"
+        ></app-input>
+        <app-input
+            inputType="text"
+            placeholder="Linkedin"
+            [parentForm]="editLinksForm"
+            controlName="linkedin"
+            getForm="linkedin"
+            [control]="editLinksForm.get('linkedin')"
+        ></app-input>
+        <app-input
+            inputType="text"
+            placeholder="Github"
+            [parentForm]="editLinksForm"
+            controlName="github"
+            getForm="github"
+            [control]="editLinksForm.get('github')"
+        ></app-input>
+        <div class="actions">
+            <app-button
+                text="Cancel"
+                [color]="mainBlueColor"
+                [border]="'1px solid ' + mainBlueColor"
+                [padding]="[7, 20, 7, 20]"
+                [fontSize]="13"
+                textTransform="uppercase"
+                direction="left"
+                [margin]="['10px', '15px', '0px', '0px']"
+                background="transparent"
+                typeBtn="button"
+                [hover]="{
+                    color: '#333',
+                    background: mainBlueColor
+                }"
+                (onClick)="onClose()"
+            ></app-button>
+            <app-button
+                text="Save"
+                [color]="mainBlueColor"
+                [border]="'1px solid ' + mainBlueColor"
+                [padding]="[7, 20, 7, 20]"
+                [fontSize]="13"
+                textTransform="uppercase"
+                direction="left"
+                [margin]="['10px', '0px', '0px', '0px']"
+                background="transparent"
+                typeBtn="submit"
+                [hover]="{
+                    color: '#333',
+                    background: mainBlueColor
+                }"
+                [disabledBtn]="!editLinksForm.valid"
+            ></app-button>
+        </div>
+    </form>
+</div>

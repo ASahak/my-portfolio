@@ -1,0 +1,55 @@
+<div>
+    <h3>{{config.data.title}}</h3>
+    <form [formGroup]="skillsListForm" (submit)="add()">
+        <app-input
+            inputType="text"
+            placeholder="Skill"
+            [parentForm]="skillsListForm"
+            controlName="list"
+            getForm="list"
+            [control]="skillsListForm.get('list')"
+        ></app-input>
+    </form>
+    <div class="skills-list">
+        <span *ngFor="let skill of listSkills; let i = index">
+            {{skill}}
+            <span class="lnr lnr-cross" (click)="removeSkill(i)"></span>
+        </span>
+    </div>
+    <div class="actions">
+        <app-button
+            text="Cancel"
+            [color]="mainBlueColor"
+            [border]="'1px solid ' + mainBlueColor"
+            [padding]="[7, 20, 7, 20]"
+            [fontSize]="13"
+            textTransform="uppercase"
+            direction="left"
+            [margin]="['10px', '15px', '0px', '0px']"
+            background="transparent"
+            typeBtn="button"
+            [hover]="{
+                color: '#333',
+                background: mainBlueColor
+            }"
+            (onClick)="onClose()"
+        ></app-button>
+        <app-button
+            text="Save"
+            [color]="mainBlueColor"
+            [border]="'1px solid ' + mainBlueColor"
+            [padding]="[7, 20, 7, 20]"
+            [fontSize]="13"
+            textTransform="uppercase"
+            direction="left"
+            [margin]="['10px', '0px', '0px', '0px']"
+            background="transparent"
+            typeBtn="button"
+            [hover]="{
+                color: '#333',
+                background: mainBlueColor
+            }"
+            (onClick)="save()"
+        ></app-button>
+    </div>
+</div>

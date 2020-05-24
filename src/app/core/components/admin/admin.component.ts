@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {MAIN_FONT_BLUE_COLOR} from '@app/core/constants';
 import {ValidationService} from '@app/shared/services/form-validation.service';
-import {AuthService} from '@corePath/services/auth.service';
+import {AuthService} from '@app/shared/services/auth.service';
 import {Common} from '@corePath/enums';
 
 @Component({

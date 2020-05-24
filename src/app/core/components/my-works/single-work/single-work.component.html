@@ -4,8 +4,21 @@
     left: elementData.x + 'px',
     top: elementData.y + 'px',
     backgroundImage: 'url(' + imgSrc + ')'
-}" [attr.data-index]="dataPosition">
+}" [attr.data-index]="dataPosition"
+    [ngClass]="[!isPublic ? 'disable-item' : '']"
+>
     <div class="date">
+        <span *ngIf="isLogged" class="lnr lnr-cross" (click)="emitRemove(idProject)"></span>
+        <app-edit
+            *ngIf="isLogged"
+            [page]="pageName"
+            [update-id]="idProject"
+            modal-name="add-update-project"
+            hint="update"
+            icon="lnr-pencil"
+            [collection-field-name]="fieldWorksName"
+            modal-title="Update Work"
+        ></app-edit>
         Prepared at - {{date}}
     </div>
     <a [attr.href]="projectURL" target="_blank">View Project</a>

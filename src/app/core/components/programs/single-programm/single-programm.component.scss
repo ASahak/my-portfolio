@@ -18,6 +18,11 @@
         transition: .4s;
         background-color: #18181894;
     }
+    &.disable-item {
+        &:after {
+            background-color: #08fdd894;
+        }
+    }
     &:hover:after {
         background-color: transparent;
     }
@@ -42,7 +47,8 @@
         visibility: visible;
     }
     .name {
-        position: absolute;
+        position: absolute !important;
+        z-index: 22;
         bottom: 0;
         background-color: #181818bf;
         width: calc(100% - 30px);
@@ -66,7 +72,8 @@
         transform: translateY(0px);
     }
     .date {
-        position: absolute;
+        position: absolute !important;
+        z-index: 22;
         top: 0;
         background-color: #181818bf;
         width: calc(100% - 30px);
@@ -77,6 +84,17 @@
         opacity: 0;
         visibility: hidden;
         padding: 5px 15px;
+        ::ng-deep .lnr-pencil {
+            right: 5px !important;
+        }
+        .lnr-cross {
+            position: absolute;
+            left: 5px;
+            padding: 5px;
+            border: 1px solid #9c3a3a;
+            background: #9c3a3a;
+            cursor: pointer;
+        }
     }
     &:hover .date {
         opacity: 1;
