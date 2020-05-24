@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit} from '@angular/core';
 import * as moment from 'moment';
+import {AngularFirestore} from '@angular/fire/firestore';
 
 @Component({
     selector: 'app-single-work',
@@ -13,11 +14,31 @@ export class SingleWorkComponent implements OnInit {
     public dataPosition: number;
     public projectURL: string;
     public elementData: object;
-    constructor () {
+
+    public isLogged: boolean;
+    public isPublic: boolean;
+    public pageName: string;
+    public idProject: string;
+    public fieldWorksName: string;
+    constructor (
+        private firestore: AngularFirestore,
+    ) {
     }
 
     ngOnInit (): void {
         this.date = moment(this.date).format('ll');
+    }
+    public emitRemove (id) {
+        let mainData = [];
+        this.firestore.doc(this.pageName + '/' + this.fieldWorksName).get().subscribe(data => {
+            mainData = data.data()?.list;
+            const findIndex = mainData.findIndex(project => project.id === id);
+            if (findIndex !== -1) {
+                mainData.splice(findIndex, 1);
+                this.firestore.doc(this.pageName + '/' + this.fieldWorksName)
+                    .update({list: mainData});
+            }
+        });
     }
 
 }

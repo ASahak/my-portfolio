@@ -1,0 +1,73 @@
+<div>
+    <h3>{{config.data.title}}</h3>
+    <form [formGroup]="skillsTitleForm" (submit)="save()">
+        <app-input
+            inputType="text"
+            placeholder="Title"
+            [parentForm]="skillsTitleForm"
+            controlName="title"
+            getForm="title"
+            [control]="skillsTitleForm.get('title')"
+        ></app-input>
+        <app-input
+            inputType="textarea"
+            placeholder="Description 1"
+            [parentForm]="skillsTitleForm"
+            controlName="description1"
+            getForm="description1"
+            [control]="skillsTitleForm.get('description1')"
+        ></app-input>
+        <app-input
+            inputType="textarea"
+            placeholder="Description 2"
+            [parentForm]="skillsTitleForm"
+            controlName="description2"
+            getForm="description2"
+            [control]="skillsTitleForm.get('description2')"
+        ></app-input>
+        <app-input
+            inputType="textarea"
+            placeholder="Description 3"
+            [parentForm]="skillsTitleForm"
+            controlName="description3"
+            getForm="description3"
+            [control]="skillsTitleForm.get('description3')"
+        ></app-input>
+        <div class="actions">
+            <app-button
+                text="Cancel"
+                [color]="mainBlueColor"
+                [border]="'1px solid ' + mainBlueColor"
+                [padding]="[7, 20, 7, 20]"
+                [fontSize]="13"
+                textTransform="uppercase"
+                direction="left"
+                [margin]="['10px', '15px', '0px', '0px']"
+                background="transparent"
+                typeBtn="button"
+                [hover]="{
+                    color: '#333',
+                    background: mainBlueColor
+                }"
+                (onClick)="onClose()"
+            ></app-button>
+            <app-button
+                text="Save"
+                [color]="mainBlueColor"
+                [border]="'1px solid ' + mainBlueColor"
+                [padding]="[7, 20, 7, 20]"
+                [fontSize]="13"
+                textTransform="uppercase"
+                direction="left"
+                [margin]="['10px', '0px', '0px', '0px']"
+                background="transparent"
+                typeBtn="submit"
+                [hover]="{
+                    color: '#333',
+                    background: mainBlueColor
+                }"
+                [disabledBtn]="!skillsTitleForm.valid"
+            ></app-button>
+        </div>
+    </form>
+</div>

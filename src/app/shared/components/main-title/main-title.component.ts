@@ -1,4 +1,4 @@
-import {ApplicationRef, Component, Input, OnInit, OnDestroy} from '@angular/core';
+import {ApplicationRef, Component, Input, OnInit, OnDestroy, OnChanges, SimpleChanges} from '@angular/core';
 import {RouterStateService} from '@app/shared/services/router-state.service';
 import {Subscription} from 'rxjs';
 
@@ -7,7 +7,7 @@ import {Subscription} from 'rxjs';
     templateUrl: './main-title.component.html',
     styleUrls: ['./main-title.component.scss']
 })
-export class MainTitleComponent implements OnInit, OnDestroy {
+export class MainTitleComponent implements OnInit, OnDestroy, OnChanges {
     @Input() text: string;
     @Input() interval: number;
     public rerender: boolean = true;
@@ -23,6 +23,15 @@ export class MainTitleComponent implements OnInit, OnDestroy {
                 this.rerender = true;
             }, 3100);
         });
+    }
+
+    ngOnChanges (changes: SimpleChanges) {
+        if (changes.text.previousValue !== undefined && changes.text.currentValue !== changes.text.previousValue) {
+            this.rerender = false;
+            setTimeout(() => {
+                this.rerender = true;
+            }, 0);
+        }
     }
 
     ngOnInit () {

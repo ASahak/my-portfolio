@@ -1,0 +1,37 @@
+.image-upload-wrap {
+    > label {
+        color: #f1e5e6;
+        background-color: #1d1d1d;
+        max-width: 200px;
+        font-size: 14px;
+        font-weight: 700;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: pointer;
+        display: inline-block;
+        overflow: hidden;
+        padding: 0.625rem 1.25rem;
+        > svg {
+            width: 1em;
+            height: 1em;
+            vertical-align: middle;
+            fill: currentColor;
+            margin-top: -0.25em;
+            margin-right: 0.25em;
+        }
+    }
+    > progress {
+        display: block;
+        width: 100%;
+    }
+    .img-wrap {
+        border: 1px solid #1d1d1d;
+        border-radius: 4px;
+        text-align: center;
+        height: 250px;
+        margin-bottom: 20px;
+        > img {
+            max-height: 100%;
+        }
+    }
+}

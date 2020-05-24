@@ -1,0 +1,93 @@
+<div>
+    <h3>{{config.data.title}}</h3>
+    <form *ngIf="projectForm" [formGroup]="projectForm" (submit)="save()">
+        <app-input
+            inputType="text"
+            placeholder="Name"
+            [parentForm]="projectForm"
+            controlName="name"
+            getForm="name"
+            [control]="projectForm.get('name')"
+        ></app-input>
+        <app-input
+            inputType="text"
+            placeholder="Project Link"
+            [parentForm]="projectForm"
+            controlName="link"
+            getForm="link"
+            [control]="projectForm.get('link')"
+        ></app-input>
+        <app-input
+            inputType="date"
+            placeholder="Prepared Date"
+            [parentForm]="projectForm"
+            controlName="preparedDate"
+            getForm="preparedDate"
+            [control]="projectForm.get('preparedDate')"
+        ></app-input>
+        <app-input
+            *ngIf="config.data?.firebaseCollection?.collectionField === 'programs'"
+            inputType="text"
+            placeholder="Prepared Language"
+            [parentForm]="projectForm"
+            controlName="language"
+            getForm="language"
+            [control]="projectForm.get('language')"
+        ></app-input>
+        <app-input
+            inputType="checkbox"
+            [withLabel]="{id: 'date', name: 'Is Public'}"
+            [parentForm]="projectForm"
+            controlName="isPublic"
+            getForm="isPublic"
+            [control]="projectForm.get('isPublic')"
+        ></app-input>
+        <div class="image-upload-wrap">
+            <div class="img-wrap" *ngIf="downloadURL">
+                <img [src]="downloadURL" alt="">
+            </div>
+            <label for="file">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path>
+                </svg>
+                <span>{{downloadURL ? 'Update picture' : 'Choose a file…'}}</span></label>
+            <input type="file" hidden id="file" (change)="uploadImage($event)">
+            <progress max="100" [value]="(uploadProgress | async)" *ngIf="progressNotStarted"></progress>
+        </div>
+        <div class="actions">
+            <app-button
+                text="Cancel"
+                [color]="mainBlueColor"
+                [border]="'1px solid ' + mainBlueColor"
+                [padding]="[7, 20, 7, 20]"
+                [fontSize]="13"
+                textTransform="uppercase"
+                direction="left"
+                [margin]="['10px', '15px', '0px', '0px']"
+                background="transparent"
+                typeBtn="button"
+                [hover]="{
+                    color: '#333',
+                    background: mainBlueColor
+                }"
+                (onClick)="onClose()"
+            ></app-button>
+            <app-button
+                text="Save"
+                [color]="mainBlueColor"
+                [border]="'1px solid ' + mainBlueColor"
+                [padding]="[7, 20, 7, 20]"
+                [fontSize]="13"
+                textTransform="uppercase"
+                direction="left"
+                [margin]="['10px', '0px', '0px', '0px']"
+                background="transparent"
+                typeBtn="submit"
+                [hover]="{
+                    color: '#333',
+                    background: mainBlueColor
+                }"
+                [disabledBtn]="!projectForm.valid"
+            ></app-button>
+        </div>
+    </form>
+</div>

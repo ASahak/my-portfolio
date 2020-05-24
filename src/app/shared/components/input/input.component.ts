@@ -24,5 +24,9 @@ export class InputComponent implements OnInit {
 
     ngOnInit (): void {
     }
+    checkboxChange (evt) {
+        return (evt.target.checked ?
+            this.parentForm.get(this.controlName).patchValue(true) : this.parentForm.get(this.controlName).patchValue(false));
+    }
 
 }

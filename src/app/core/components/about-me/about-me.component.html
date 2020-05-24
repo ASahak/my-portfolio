@@ -10,14 +10,26 @@
                 </p>
             </div>
             <div class="html-content_middle">
-                <app-main-title text="About Me" [interval]="1"></app-main-title>
+                <app-edit
+                    *ngIf="isLogged"
+                    [page]="pageName"
+                    [modal-name]="fieldTitleName"
+                    modal-title="About Title"
+                ></app-edit>
+                <app-main-title [text]="backEndDataTitle.title" [interval]="1"></app-main-title>
                 <p class="desc-contact-p">
-                    I’m a self taught Middle Front-End Developer with the 3 year of professional work experience I’m 24, I’m passionate about programming, astrology and geography. I’m a very positive person and a team player :)
-                    I have worked in the Volvox LLC, ArsSystem LLC and now I am working <a href="https://www.esterox.org/" target="_blank">Esterox LLC</a>
+                    {{backEndDataTitle.description}}
+                    <a [attr.href]="backEndDataTitle.workingPlaceUrl" target="_blank">{{backEndDataTitle.workingPlaceName}}</a>
                 </p>
                 <div class="phone-email">
-                    <a href="tel:+37494129604"><span class="lnr lnr-phone-handset"></span>+37494129604</a>
-                    <a href="mailto:arthur.sahakyan96@gmail.com"><span class="lnr lnr-envelope"></span>  arthur.sahakyan96@gmail.com</a>
+                    <app-edit
+                        *ngIf="isLogged"
+                        [page]="pageName"
+                        [modal-name]="fieldMeName"
+                        modal-title="About Contact Me"
+                    ></app-edit>
+                    <a [attr.href]="'tel:' + backEndDataMe.phone"><span class="lnr lnr-phone-handset"></span>{{backEndDataMe.phone}}</a>
+                    <a [attr.href]="'mailto:' + backEndDataMe.email"><span class="lnr lnr-envelope"></span>  {{backEndDataMe.email}}</a>
                 </div>
                 <div class="container-mobile-pyramid">
                     <div class="side left"></div>

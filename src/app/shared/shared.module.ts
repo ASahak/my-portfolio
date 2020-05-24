@@ -6,6 +6,7 @@ import {MainTitleComponent} from './components/main-title/main-title.component';
 import {ButtonComponent} from './components/button/button.component';
 import {ControlMessagesComponent} from './components/control-message/control-message.component';
 import {InputComponent} from './components/input/input.component';
+import {EditComponent} from './components/edit/edit.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import {InputComponent} from './components/input/input.component';
         ButtonComponent,
         ControlMessagesComponent,
         InputComponent,
+        EditComponent,
     ],
     imports: [
         CommonModule,
@@ -27,6 +29,7 @@ import {InputComponent} from './components/input/input.component';
         ButtonComponent,
         ControlMessagesComponent,
         InputComponent,
+        EditComponent,
     ],
 })
 export class SharedModule {

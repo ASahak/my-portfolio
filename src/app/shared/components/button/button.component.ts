@@ -21,6 +21,7 @@ export class ButtonComponent implements OnInit, AfterViewInit, OnDestroy {
     @Input() hover: object;
     @Input() padding: Array<number>;
     @Input() margin: Array<string>;
+    // tslint:disable-next-line:no-output-on-prefix
     @Output() onClick = new EventEmitter<any>();
     @ViewChild('buttonParent') buttonParent: ElementRef;
     @ViewChild('childRef') childRef: ElementRef;
@@ -37,17 +38,17 @@ export class ButtonComponent implements OnInit, AfterViewInit, OnDestroy {
     __margin () {
         return {
             marginTop: this.margin[0] || '0px',
-            marginLeft: this.margin[1] || '0px',
+            marginRight: this.margin[1] || '0px',
             marginBottom: this.margin[2] || '0px',
-            marginRight: this.margin[3] || '0px',
+            marginLeft: this.margin[3] || '0px',
         };
     }
     __padding () {
         return {
             paddingTop: this.padding[0] + 'px' || '0px',
-            paddingLeft: this.padding[1] + 'px' || '0px',
+            paddingRight: this.padding[1] + 'px' || '0px',
             paddingBottom: this.padding[2] + 'px' || '0px',
-            paddingRight: this.padding[3] + 'px' || '0px',
+            paddingLeft: this.padding[3] + 'px' || '0px',
         };
     }
     __setHover (isEnter) {

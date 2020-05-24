@@ -1,4 +1,13 @@
 <section>
+    <app-edit
+        *ngIf="isLogged"
+        [page]="pageName"
+        modal-name="add-update-project"
+        hint="add"
+        icon="lnr-file-add"
+        [collection-field-name]="fieldProgramsName"
+        modal-title="Add Program"
+    ></app-edit>
     <div class="shuffle-header">
         <button (click)="filterPrograms('*')" [class.active-btn]="publicLanguage === '*'" data-filter="*">All</button>
         <button
@@ -8,10 +17,18 @@
             *ngFor="let language of generateBtns()">{{language}}</button>
     </div>
     <div class="grid">
-        <div [ngClass]="['grid-item', replaceLanguage(item.language)]" [attr.data-category]="replaceLanguage(item.language)" *ngFor="let item of myPrograms">
-            <app-single-programm
-                [data]="item"
-            ></app-single-programm>
-        </div>
+        <ng-container *ngFor="let item of myPrograms" >
+            <div *ngIf="item.isPublic || isLogged" [ngClass]="['grid-item', replaceLanguage(item.language)]" [attr.data-category]="replaceLanguage(item.language)">
+                <app-single-programm
+                    [is-public]="item.isPublic"
+                    [id-project]="item.id"
+                    [is-logged]="isLogged"
+                    [page-name]="pageName"
+                    [field-programs-name]="fieldProgramsName"
+                    (remove)="removeProject(item.id)"
+                    [data]="item"
+                ></app-single-programm>
+            </div>
+        </ng-container>
     </div>
 </section>

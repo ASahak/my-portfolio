@@ -9,8 +9,14 @@
             </p>
         </div>
         <div class="html-content_middle">
-            <app-main-title text="Hi,I'm Arthur,JS Engineer" [interval]="2"></app-main-title>
-            <p>Front End Development</p>
+            <app-edit
+                *ngIf="isLogged"
+                [page]="pageName"
+                [modal-name]="fieldName"
+                modal-title="Home Title"
+            ></app-edit>
+            <app-main-title [text]="backEndData.title" [interval]="2"></app-main-title>
+            <p>{{backEndData.subTitle}}</p>
             <app-button
                 text="Contact Me"
                 [color]="mainBlueColor"
@@ -19,7 +25,7 @@
                 [fontSize]="16"
                 textTransform="uppercase"
                 direction="left"
-                [margin]="['15px', '0px', '0px', '15px']"
+                [margin]="['15px', '0px', '0px', '0px']"
                 background="transparent"
                 [hover]="{
                     color: '#333',

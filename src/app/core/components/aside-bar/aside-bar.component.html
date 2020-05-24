@@ -50,18 +50,26 @@
         </li>
     </ul>
     <ul class="aside_bottom-content">
+        <app-edit
+            *ngIf="isLogged"
+            [page]="asideBar"
+            modal-name="edit-links"
+            icon="lnr-pencil"
+            [collection-field-name]="asideBarFieldName"
+            modal-title="Update links"
+        ></app-edit>
         <li>
-            <a href="https://www.facebook.com/artur.sahakyan.3762" target="_blank">
+            <a [attr.href]="asideBarLinks?.fb" target="_blank">
                 <i class="fa fa-facebook" aria-hidden="true"></i>
             </a>
         </li>
         <li>
-            <a href="https://www.linkedin.com/in/arthur-sahakyan-276abb158/" target="_blank">
+            <a [attr.href]="asideBarLinks?.linkedin" target="_blank">
                 <i class="fa fa-linkedin" aria-hidden="true"></i>
             </a>
         </li>
         <li>
-            <a href="https://github.com/ASahak" target="_blank">
+            <a [attr.href]="asideBarLinks?.github" target="_blank">
                 <i class="fa fa-github" aria-hidden="true"></i>
             </a>
         </li>

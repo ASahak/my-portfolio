@@ -1,3 +1,14 @@
 <section >
+    <div class="add-work">
+        <app-edit
+            *ngIf="isLogged"
+            [page]="pageName"
+            modal-name="add-update-project"
+            hint="add"
+            icon="lnr-file-add"
+            [collection-field-name]="fieldWorksName"
+            modal-title="Add Work"
+        ></app-edit>
+    </div>
     <ng-template #viewWorkContainer></ng-template>
 </section>

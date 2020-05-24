@@ -5,8 +5,13 @@ import {
 import {
     Common
 } from '@corePath/enums';
+import {
+    AsideBarLinks
+} from '@corePath/models/common';
 import { AngularFireStorage } from '@angular/fire/storage';
-import {AuthService} from '@corePath/services/auth.service';
+import {AuthService} from '@app/shared/services/auth.service';
+import {AngularFirestore} from '@angular/fire/firestore';
+import {FirebaseSnapshotsService} from '@app/shared/services/firebase-snapshots.service';
 
 @Component({
     selector: 'app-aside-bar',
@@ -14,13 +19,25 @@ import {AuthService} from '@corePath/services/auth.service';
     styleUrls: ['./aside-bar.component.scss'],
 })
 export class AsideBarComponent implements OnInit, AfterViewInit {
-    public mainBlueColor: string = MAIN_FONT_BLUE_COLOR;
-    public isLogged: boolean = false;
-    public pdfURL: string = '';
+    public mainBlueColor: string              = MAIN_FONT_BLUE_COLOR;
+    public isLogged: boolean                  = false;
+    public pdfURL: string                     = '';
+    public asideBar: string                   = Common.asideBar;
+    public asideBarFieldName: string          = Common.asideBarFieldName;
+    public asideBarLinks: AsideBarLinks | any = {
+        fb: '',
+        linkedin: '',
+        github: '',
+    };
     constructor (
+        private firebaseService: FirebaseSnapshotsService,
+        private firestore: AngularFirestore,
         private authService: AuthService,
         private afStorage: AngularFireStorage
     ) {
+        this.firebaseService.AsideBar().subscribe(res => {
+            this.asideBarLinks = res.payload?.data();
+        });
     }
 
     public logOut () {

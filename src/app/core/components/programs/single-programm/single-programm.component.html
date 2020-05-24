@@ -1,9 +1,20 @@
-<div class="every-programme"
+<div [ngClass]="['every-programme', !isPublic ? 'disable-item' : '']"
     [style]="{
         backgroundImage: 'url(' + data.linkURL + ')'
     }"
 >
     <div class="date">
+        <span *ngIf="isLogged" class="lnr lnr-cross" (click)="emitRemove()"></span>
+        <app-edit
+            *ngIf="isLogged"
+            [page]="pageName"
+            [update-id]="idProject"
+            modal-name="add-update-project"
+            hint="update"
+            icon="lnr-pencil"
+            [collection-field-name]="fieldProgramsName"
+            modal-title="Update Program"
+        ></app-edit>
         Prepared at - {{momentDate}}
     </div>
     <a [attr.href]="data.link" target="_blank">View Project</a>
