@@ -1,0 +1,27 @@
+<div class="main-wrap-send-contact-messages">
+    <h3>{{config.data.title}}</h3>
+    <div class="messages-list" *ngFor="let message of messages">
+        <h6>{{message.name}}</h6>
+        <i>{{message.email}}</i>
+        <p>{{message.message}}</p>
+    </div>
+    <div class="actions">
+        <app-button
+            text="Cancel"
+            [color]="mainBlueColor"
+            [border]="'1px solid ' + mainBlueColor"
+            [padding]="[7, 20, 7, 20]"
+            [fontSize]="13"
+            textTransform="uppercase"
+            direction="left"
+            [margin]="['10px', '15px', '0px', '0px']"
+            background="transparent"
+            typeBtn="button"
+            [hover]="{
+                    color: '#333',
+                    background: mainBlueColor
+                }"
+            (onClick)="onClose()"
+        ></app-button>
+    </div>
+</div>

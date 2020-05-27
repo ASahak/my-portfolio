@@ -22,6 +22,7 @@ import {SkillsTitleComponent} from '@app/core/components/edit-modals/skills-titl
 import {SkillsListComponent} from '@app/core/components/edit-modals/skills-list/skills-list.component';
 import {AddUpdateProjectComponent} from '@app/core/components/edit-modals/add-update-project/add-update-project.component';
 import {EditLinksComponent} from '@app/core/components/edit-modals/edit-links/edit-links.component';
+import {ContactSendMessagesComponent} from '@app/core/components/edit-modals/contact-send-messages/contact-send-messages.component';
 
 // Pages
 import {HomeComponent} from '@corePath/components/home/home.component';
@@ -47,6 +48,7 @@ import {AdminComponent} from '@corePath/components/admin/admin.component';
         SingleProgrammComponent,
         SingleWorkComponent,
         EditLinksComponent,
+        ContactSendMessagesComponent,
     ],
     declarations: [
         AppComponent,
@@ -70,6 +72,7 @@ import {AdminComponent} from '@corePath/components/admin/admin.component';
         AddUpdateProjectComponent,
         SingleWorkComponent,
         EditLinksComponent,
+        ContactSendMessagesComponent,
     ],
     imports: [
         FormsModule,
