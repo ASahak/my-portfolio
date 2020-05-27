@@ -9,8 +9,6 @@ import {
     ComponentFactory,
     ViewChild, ComponentRef, ElementRef
 } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import {SingleWorkComponent} from '@corePath/components/my-works/single-work/single-work.component';
 import {RouterStateService} from '@app/shared/services/router-state.service';
 import {Common} from '@app/core/enums';
@@ -33,7 +31,7 @@ export class MyWorksComponent implements OnInit, OnDestroy {
     private rowsLeftRestrict            = {};
     public pageName: string             = Common.pageProjectName;
     public fieldWorksName: string       = Common.pageWorksFieldName;
-    private isLogged: boolean           = false;
+    public isLogged: boolean            = false;
     @ViewChild('viewWorkContainer', {read : ViewContainerRef}) viewWorkContainer: ViewContainerRef;
     constructor (
         private $el: ElementRef,
@@ -175,16 +173,12 @@ export class MyWorksComponent implements OnInit, OnDestroy {
     // The component could have been created dynamically with a similar approach,
     // for example to define its template dynamically.
     private createDynamicModule (componentType: Type<SingleWorkComponent>): any {
-        @NgModule({
-            declarations: [
-                componentType,
-            ],
-            imports: [BrowserModule, FormsModule]
-        })
-        class RuntimeComponentModule {
-        }
+        const moduleClass = class RuntimeComponentModule {
+        };
+        NgModule({ imports: [], declarations: [componentType] })(moduleClass);
+
         // a module for just this Type
-        return RuntimeComponentModule;
+        return moduleClass;
     }
     ngOnInit (): void {
         addEventListener('resize', this.matchElementWidth.bind(this));

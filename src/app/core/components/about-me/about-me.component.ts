@@ -13,7 +13,7 @@ import {FirebaseSnapshotsService} from '@app/shared/services/firebase-snapshots.
     styleUrls: ['./about-me.component.scss']
 })
 export class AboutMeComponent implements OnInit {
-    private isLogged: boolean           = false;
+    public isLogged: boolean            = false;
     public pageName: string             = Common.pageAboutName;
     public fieldTitleName: string       = Common.pageAboutTitleFieldName;
     public fieldMeName: string          = Common.pageAboutMeFieldName;

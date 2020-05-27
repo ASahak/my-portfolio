@@ -17,7 +17,7 @@ export class SkillsListComponent implements OnInit {
     constructor (
         private firestore: AngularFirestore,
         private dialog: DialogRef,
-        private config: DialogConfig,
+        public config: DialogConfig,
         private formBuilder: FormBuilder
     ) {
         this.skillsListForm  =  this.formBuilder.group({
@@ -38,7 +38,7 @@ export class SkillsListComponent implements OnInit {
     onClose () {
         this.dialog.close();
     }
-    private save () {
+    public save () {
         this.firestore.doc(this.config.data.firebaseCollection.page + '/' + this.config.data.firebaseCollection.collectionField)
             .update({list: this.listSkills}).then(res => {
             this.onClose();
@@ -46,7 +46,7 @@ export class SkillsListComponent implements OnInit {
         this.skillsListForm.reset();
     }
 
-    private add () {
+    public add () {
         if (this.listSkills.indexOf(this.skillsListForm.value.list) !== -1) {
             this.skillsListForm.reset();
             alert('There is like that skill already!');
@@ -55,7 +55,7 @@ export class SkillsListComponent implements OnInit {
         this.listSkills.push(this.skillsListForm.value.list);
         this.skillsListForm.reset();
     }
-    private removeSkill (index) {
+    public removeSkill (index) {
         this.listSkills.splice(index, 1);
     }
 

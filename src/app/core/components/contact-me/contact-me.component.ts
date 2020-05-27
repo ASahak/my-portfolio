@@ -14,7 +14,7 @@ export class ContactMeComponent implements OnInit {
     public contactForm: FormGroup;
     public mainBlueColor: string  = MAIN_FONT_BLUE_COLOR;
     public isSubmitted: boolean   = false;
-    private messageSent: boolean  = false;
+    public messageSent: boolean   = false;
     constructor (
         private firestore: AngularFirestore,
         private router: Router,

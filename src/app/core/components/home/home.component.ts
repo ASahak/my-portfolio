@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     public mainBlueColor: string  = MAIN_FONT_BLUE_COLOR;
     public renderTpl: boolean     = true;
     private previousRouteSub      = null;
-    private isLogged: boolean     = false;
+    public isLogged: boolean      = false;
     public pageName: string       = Common.pageHomeName;
     public fieldName: string      = Common.pageHomeFieldName;
     public backEndData: Home      = {title: '', subTitle: ''};

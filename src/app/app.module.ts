@@ -84,7 +84,7 @@ import {AdminComponent} from '@corePath/components/admin/admin.component';
         DialogModule,
         AngularFireAuthModule,
         AngularFireStorageModule,
-        // BrowserModule.withServerTransition({ appId: 'serverApp' }),
+        BrowserModule.withServerTransition({ appId: 'a-portfolio' }),
     ],
     providers: [],
     bootstrap: [AppComponent]

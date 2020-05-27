@@ -18,7 +18,7 @@ export class SkillsComponent implements OnInit, OnDestroy, AfterViewInit {
     @ViewChild('myTagCloud') myTagCloud: ElementRef;
     @ViewChild('middleContent') middleContent: ElementRef;
     @ViewChild('rightPanel') rightPanel: ElementRef;
-    private isLogged: boolean            = false;
+    public isLogged: boolean             = false;
     public pageName: string              = Common.pageSkillsName;
     public fieldTitleName: string        = Common.pageSkillsTitleFieldName;
     public fieldListName: string         = Common.pageSkillsListFieldName;

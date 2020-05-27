@@ -14,7 +14,7 @@ export class ContactSendMessagesComponent implements OnInit {
     public mainBlueColor: string  = MAIN_FONT_BLUE_COLOR;
     constructor (
         private dialog: DialogRef,
-        private config: DialogConfig,
+        public config: DialogConfig,
         private firebaseService: FirebaseSnapshotsService,
     ) {
         this.firebaseService.Messages().subscribe(res => {

@@ -16,14 +16,14 @@ import {finalize, map} from 'rxjs/operators';
 export class AddUpdateProjectComponent implements OnInit {
     public projectForm: FormGroup;
     public mainBlueColor: string        = MAIN_FONT_BLUE_COLOR;
-    private downloadURL: string         = '';
-    private uploadProgress: any;
-    private progressNotStarted: boolean = false;
+    public downloadURL: string          = '';
+    public uploadProgress: any;
+    public progressNotStarted: boolean  = false;
     constructor (
         private afStorage: AngularFireStorage,
         private firestore: AngularFirestore,
         private dialog: DialogRef,
-        private config: DialogConfig,
+        public config: DialogConfig,
         private router: Router,
         private formBuilder: FormBuilder
     ) {
