@@ -1,8 +1,8 @@
 <div [style]="{
-    width: elementData.width + 'px',
-    height: elementData.height + 'px',
-    left: elementData.x + 'px',
-    top: elementData.y + 'px',
+    width: elementData?.width + 'px',
+    height: elementData?.height + 'px',
+    left: elementData?.x + 'px',
+    top: elementData?.y + 'px',
     backgroundImage: 'url(' + imgSrc + ')'
 }" [attr.data-index]="dataPosition"
     [ngClass]="[!isPublic ? 'disable-item' : '']"

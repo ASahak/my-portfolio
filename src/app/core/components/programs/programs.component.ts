@@ -13,7 +13,7 @@ import {AngularFirestore} from '@angular/fire/firestore';
     styleUrls: ['./programs.component.scss'],
 })
 export class ProgramsComponent implements OnInit {
-    private isLogged: boolean           = false;
+    public isLogged: boolean            = false;
     public myPrograms: any              = [];
     public publicLanguage: string       = '*';
     private isotope: any;

@@ -13,7 +13,12 @@ export class SingleWorkComponent implements OnInit {
     public date: any;
     public dataPosition: number;
     public projectURL: string;
-    public elementData: object;
+    public elementData: any = {
+        width: null,
+        height: null,
+        x: null,
+        y: null
+    };
 
     public isLogged: boolean;
     public isPublic: boolean;

@@ -19,7 +19,7 @@ export class SkillsTitleComponent implements OnInit {
     constructor (
         private firestore: AngularFirestore,
         private dialog: DialogRef,
-        private config: DialogConfig,
+        public config: DialogConfig,
         private router: Router,
         private formBuilder: FormBuilder
     ) {
@@ -45,7 +45,7 @@ export class SkillsTitleComponent implements OnInit {
         });
     }
 
-    private save () {
+    public save () {
         this.firestore.doc(this.config.data.firebaseCollection.page + '/' + this.config.data.firebaseCollection.collectionField)
             .update(this.skillsTitleForm.value).then(res => {
             this.onClose();
