@@ -24,6 +24,9 @@ export class AsideBarComponent implements OnInit, AfterViewInit {
     public pdfURL: string                     = '';
     public asideBar: string                   = Common.asideBar;
     public asideBarFieldName: string          = Common.asideBarFieldName;
+    public pageName: string                   = Common.messagesCollectionName;
+    public modalName: string                  = Common.messagesFieldName;
+    public messages                           = [];
     public asideBarLinks: AsideBarLinks | any = {
         fb: '',
         linkedin: '',
@@ -35,6 +38,9 @@ export class AsideBarComponent implements OnInit, AfterViewInit {
         private authService: AuthService,
         private afStorage: AngularFireStorage
     ) {
+        this.firebaseService.Messages().subscribe(res => {
+            this.messages = res.payload?.data()['messages'];
+        });
         this.firebaseService.AsideBar().subscribe(res => {
             this.asideBarLinks = res.payload?.data();
         });

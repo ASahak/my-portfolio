@@ -8,6 +8,10 @@ import {
     providedIn: 'root'
 })
 export class FirebaseSnapshotsService {
+    // Messages
+    public messagesCollectionName            = Common.messagesCollectionName;
+    public messagesFieldName                 = Common.messagesFieldName;
+
     // Aside Bar
     public asideBar: string                  = Common.asideBar;
     public asideBarFieldName: string         = Common.asideBarFieldName;
@@ -34,6 +38,10 @@ export class FirebaseSnapshotsService {
     constructor (
         private firestore: AngularFirestore,
     ) {
+    }
+
+    public Messages () {
+        return this.firestore.doc(`${this.messagesCollectionName}/${this.messagesFieldName}`).snapshotChanges();
     }
 
     public AsideBar () {

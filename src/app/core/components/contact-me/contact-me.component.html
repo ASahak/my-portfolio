@@ -39,23 +39,30 @@
                         getForm="message"
                         [control]="contactForm.get('message')"
                     ></app-input>
-                    <app-button
-                        text="Send"
-                        [color]="mainBlueColor"
-                        [border]="'1px solid ' + mainBlueColor"
-                        [padding]="[7, 20, 7, 20]"
-                        [fontSize]="13"
-                        textTransform="uppercase"
-                        direction="left"
-                        [margin]="['0px', '0px', '0px', '0px']"
-                        background="transparent"
-                        typeBtn="submit"
-                        [hover]="{
-                            color: '#333',
-                            background: mainBlueColor
-                        }"
-                        [disabledBtn]="!contactForm.valid"
-                    ></app-button>
+                    <p *ngIf="messageSent" class="success-message">Your message has been sent successfully</p>
+                    <div class="spinner-wrap">
+                        <app-button
+                            text="Send"
+                            [color]="mainBlueColor"
+                            [border]="'1px solid ' + mainBlueColor"
+                            [padding]="[7, 20, 7, 20]"
+                            [fontSize]="13"
+                            textTransform="uppercase"
+                            direction="left"
+                            [margin]="['0px', '0px', '0px', '0px']"
+                            background="transparent"
+                            typeBtn="submit"
+                            [hover]="{
+                                color: '#333',
+                                background: mainBlueColor
+                            }"
+                            [disabledBtn]="!contactForm.valid"
+                        ></app-button>
+                        <div class="lds-spinner" *ngIf="isSubmitted">
+                            <div *ngFor="let spinner of [].constructor(12)">
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="html-content_bottom">

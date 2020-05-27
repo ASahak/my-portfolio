@@ -1,5 +1,14 @@
 <div class="aside-container">
     <div class="logo-content">
+        <span class="messages-count" *ngIf="messages.length && isLogged">
+            {{messages.length}}
+            <app-edit
+                *ngIf="isLogged"
+                [page]="pageName"
+                [modal-name]="modalName"
+                modal-title="Messages"
+            ></app-edit>
+        </span>
         <a  [routerLink]="'/home'">
             <app-svg-icon
                 [width]="40"

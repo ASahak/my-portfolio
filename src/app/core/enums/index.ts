@@ -15,6 +15,8 @@ enum Common {
     pageProjectName         = 'projects',
     pageProgramsFieldName   = 'programs',
     pageWorksFieldName      = 'works',
+    messagesCollectionName  = 'messages',
+    messagesFieldName       = 'contact-send-messages',
 }
 
 export {
