@@ -1,7 +1,7 @@
 <div class="aside-container">
     <div class="logo-content">
         <span class="messages-count" *ngIf="messages.length && isLogged">
-            {{messages.length}}
+            {{messages.length > 9 ? '9+' : messages.length}}
             <app-edit
                 *ngIf="isLogged"
                 [page]="pageName"
