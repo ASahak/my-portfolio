@@ -39,7 +39,9 @@ export class AsideBarComponent implements OnInit, AfterViewInit {
         private afStorage: AngularFireStorage
     ) {
         this.firebaseService.Messages().subscribe(res => {
-            this.messages = res.payload?.data()['messages'];
+            if (res.payload?.data()) {
+                this.messages = res.payload?.data()['messages'];
+            }
         });
         this.firebaseService.AsideBar().subscribe(res => {
             this.asideBarLinks = res.payload?.data();
