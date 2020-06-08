@@ -36,3 +36,6 @@ for ssr
 https://www.positronx.io/deploy-angular-8-app-to-firebase/
 
 for deploy
+
+for build
+ng b --prod --aot=false --build-optimizer=false
